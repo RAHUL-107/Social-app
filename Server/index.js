@@ -24,7 +24,7 @@ cloudinary.config({
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://social-app-dusky-eight.vercel.app",
     credentials: true,
   })
 );
@@ -60,7 +60,7 @@ app.get("/auth/login/success", (req, res) => {
 app.get("/logout", (req, res) => {
   req.logout();
   req.session = null;
-  res.redirect("http://localhost:5173");
+  res.redirect("https://social-app-dusky-eight.vercel.app");
   res.clearCookie("connect.sid" , {path: "/" , httpOnly: true , sameSite: "none" , secure: false});
 });
 
